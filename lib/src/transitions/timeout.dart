@@ -16,6 +16,9 @@ class TimeoutTransition extends Transition {
   /// Time triggering after a timeout.
   Timer? _timer;
 
+  /// The number of elapsed timer ticks since the transition was activated.
+  int get tick => _timer?.tick ?? 0;
+
   @override
   void activate() {
     assert(_timer == null, 'timer must be null');
